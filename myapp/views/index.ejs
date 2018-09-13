@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- 安装插件npm install --save-dev http-proxy-middleware -->
+  </head>
+  <body>
+    <button id="btn">发起请求</button>
+    <button id="btn1">服务器代理发起请求</button>
+    <button id="btn3">使用插件服务器代理发起请求</button>
+  </body>
+  <script src="/javascripts/axios.js"></script>
+  <script>
+    let btn = document.getElementById('btn')
+    let btn1 = document.getElementById('btn1')
+    let btn3 = document.getElementById('btn3')
+    btn.onclick=function(){
+      axios.get("/json",)
+      .then((response)=> {
+        console.log(response)
+      })
+      .catch(function (error) {
+      })
+    }
+    btn1.onclick=function(){
+      axios.get("/proxy",)
+      .then((response)=> {
+        console.log(response)
+      })
+      .catch(function (error) {
+      })
+    }
+    btn3.onclick=function(){
+      axios.get('/api/luyou',)
+      .then((response)=> {
+        console.log(response)
+      })
+      .catch(function (error) {
+      })
+    }
+  </script>
+</html>
